@@ -1,1 +1,1 @@
-# intervew
+# the backend was made using express and with node 12 connecting to an mongo database in the cloud for easier testing, the UI was made on angular 8 and using angular material, before running the programs make sure to make an npm install for both projects 

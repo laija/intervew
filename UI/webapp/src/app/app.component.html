@@ -1,0 +1,27 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+<div class="mat-app-background basic-container">
+
+  <mat-card style="display: flex; flex-direction: column;">
+    <div>For operations that require only one number, the first integer is the one used.</div>
+    <form [formGroup]="profileForm" >
+      <mat-label>Set First integer: </mat-label>
+      <input style="margin-top: 10px; border-style: solid;" formControlName="input1" matInput  #input1 maxlength="10" (input)="checkFirstInteger($event.target.value)">
+      <mat-label>Set Second integer: </mat-label>
+      <input style="margin-top: 10px; border-style: solid;" formControlName="input2" matInput  #input2 maxlength="10" (input)="checkSecondInteger($event.target.value)">
+    </form>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Choose operation</mat-label>
+      <mat-select #operation (selectionChange)="changeOperation($event.value)">
+        <mat-option value="getaSum">Sum integers</mat-option>
+        <mat-option value="getaProduct">x2</mat-option>
+        <mat-option value="getaPower">^2</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button (click)="getOperationResult()" >Send!</button>
+  </mat-card>
+  <mat-card style="display: flex; flex-direction: column;">
+    <div> Result= {{result}}</div>
+    </mat-card>
+</div>
